@@ -1,0 +1,17 @@
+services:
+  data_ingestion:
+    container_name: app
+    build:
+      context: .  # The context is set to the current folder (data-ingestion)
+      dockerfile: Dockerfile
+    volumes:
+      - ./data:/app/data  # Mount the local data folder to the container
+      - ./logs:/app/logs  # Mount the logs folder to persist logs
+    env_file:
+      - ../database/config/.env  # Path to your .env file (relative to data-ingestion)
+    networks:
+      - employee_performance_network
+
+networks:
+  employee_performance_network:
+    external: true  # Make sure this network is created by the database docker-compose

@@ -1,0 +1,12 @@
+employee_performance_analysis:
+  outputs:
+    dev:
+      dbname: employee_performance_db
+      host: postgres
+      pass: ayoub1319
+      port: 5432
+      threads: 4
+      type: postgres
+      user: ayoub
+      schema: public
+  target: dev

@@ -1,0 +1,26 @@
+services:
+  postgres:
+    image: postgres:14
+    container_name: employee_performance_postgres
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Persistent data storage
+      - ./init:/docker-entrypoint-initdb.d/     # Executes init.sql to set up the DB
+    ports:
+      - "5432:5432"  # Exposes the PostgreSQL port
+    networks:
+      - employee_performance_network
+    env_file:
+      - ./config/.env  # Loads environment variables from .env file
+
+networks:
+  employee_performance_network:
+    name: employee_performance_network
+    driver: bridge
+
+volumes:
+  postgres_data:
+    driver: local  # Data is stored locally so it persists across restarts

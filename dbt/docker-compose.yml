@@ -1,0 +1,17 @@
+services:
+  dbt:
+    build:
+      context: .  
+      dockerfile: Dockerfile
+    container_name: dbt_service
+    networks:
+      - employee_performance_network  
+    volumes:
+      - .:/dbt  
+    environment:
+      DBT_PROFILES_DIR: /dbt/profiles
+    command: ["run", "--project-dir", "/dbt/employee_performance_analysis"]
+
+networks:
+  employee_performance_network:
+    external: true
