@@ -9,6 +9,8 @@ This project implements a data pipeline to analyze employee performance. The pip
 
 The pipeline is composed of the following key stages:
 
+![Image](https://github.com/user-attachments/assets/1e7aa4f0-a9cf-4358-a188-2c5b40cf5719)
+
 1. **Data Source**: Raw data is provided in CSV format.
 2. **Data Ingestion**: Python scripts are used to extract, clean, and load data into the storage layer.
 3. **Data Storage & Transformation**:
