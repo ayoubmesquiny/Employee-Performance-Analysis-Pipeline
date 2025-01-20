@@ -79,13 +79,6 @@ Ensure the following are installed on your machine:
 
 ### 1. Data Source
 - Employee performance data is provided as a CSV file.
-- Ensure the data follows the required schema:
-  | Column Name      | Data Type  |
-  |------------------|------------|
-  | EmployeeID       | Integer    |
-  | Name             | String     |
-  | Department       | String     |
-  | PerformanceScore | Float      |
 
 ### 2. Data Ingestion
 - Python scripts:
