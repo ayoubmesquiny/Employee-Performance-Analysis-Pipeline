@@ -82,7 +82,7 @@ Ensure the following are installed on your machine:
 
 ### 2. Data Ingestion
 - Python scripts:
-  - Validate CSV data.
+  - Extract and Validate CSV data.
   - Load validated data into PostgreSQL.
 - Key libraries used: `pandas`, `sqlalchemy`.
 
